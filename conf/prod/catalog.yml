@@ -109,7 +109,7 @@ reporting.price_histogram:
   versioned: true
 
 reporting.feature_importance:
-  type: plotly.JSONDataSet # Constructed via Python API
+  type: plotly.JSONDataset # Constructed via Python API
   filepath: ${_base_location}/08_reporting/feature_importance_plot.json
   metadata:
     kedro-viz:
