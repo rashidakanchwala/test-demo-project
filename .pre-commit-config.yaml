@@ -1,0 +1,24 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+default_stages: [commit, manual]
+fail_fast: true
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v2.2.3
+      hooks:
+          - id: trailing-whitespace
+          - id: end-of-file-fixer
+          - id: check-yaml # Checks yaml files for parseable syntax.
+            exclude: "^kedro/templates/|^features/steps/test_starter/"
+          - id: check-json # Checks json files for parseable syntax.
+          - id: check-case-conflict # Check for files that would conflict in case-insensitive filesystems
+          - id: check-merge-conflict # Check for files that contain merge conflict strings.
+          - id: requirements-txt-fixer # Sorts entries in requirements.txt
+
+    - repo: https://github.com/astral-sh/ruff-pre-commit
+      rev: v0.7.0
+      hooks:
+        - id: ruff
+          args: [--fix]
+        - id: ruff-format
